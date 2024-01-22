@@ -302,11 +302,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle: {fileID: 694438338905145990, guid: 6aec70e51a97441c5af257e9875640f2, type: 3}
-  maxX: 0
-  minX: 0
-  maxY: 0
-  minY: 0
-  timeDiff: 0
+  maxX: 2
+  minX: -2
+  maxY: 2
+  minY: -2
+  timeDiff: 4
   ball: {fileID: 0}
   offset: {x: 0, y: 8, z: 0}
 --- !u!4 &647125115
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 907752009}
   - component: {fileID: 907752008}
   - component: {fileID: 907752007}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ball
   m_TagString: Ball
   m_Icon: {fileID: 0}
