@@ -36,7 +36,6 @@ public class PlatformControl : MonoBehaviour
             else
             {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * balaceSpeed);
-
             }
         }
         else
