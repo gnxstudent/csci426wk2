@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
             Restart();
         }
 
+        /*
         GameObject[] Obstacles = GameObject.FindGameObjectsWithTag("Respawn");
         foreach (GameObject temp in Obstacles)
         {
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
                 Destroy(this);
             }
         }
+        */
     }
 
     public void Restart()
