@@ -19,17 +19,6 @@ public class GameManager : MonoBehaviour
         {
             Restart();
         }
-
-        /*
-        GameObject[] Obstacles = GameObject.FindGameObjectsWithTag("Respawn");
-        foreach (GameObject temp in Obstacles)
-        {
-            if (Vector3.Distance(temp.transform.position, m_ball.transform.position) > 20)
-            {
-                Destroy(this);
-            }
-        }
-        */
     }
 
     public void Restart()
