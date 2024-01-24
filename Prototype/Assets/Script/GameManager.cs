@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     GameObject m_ball;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,21 +20,33 @@ public class GameManager : MonoBehaviour
         {
             Restart();
         }
-
-        /*
-        GameObject[] Obstacles = GameObject.FindGameObjectsWithTag("Respawn");
-        foreach (GameObject temp in Obstacles)
-        {
-            if (Vector3.Distance(temp.transform.position, m_ball.transform.position) > 20)
-            {
-                Destroy(this);
-            }
-        }
-        */
     }
 
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void StartPause()
+    {
+        // how many seconds to pause the game
+        StartCoroutine(PauseGame(3.0f));
+    }
+
+    public IEnumerator PauseGame(float pauseTime)
+    {
+        Time.timeScale = 0f;
+        float pauseEndTime = Time.realtimeSinceStartup + pauseTime;
+        while (Time.realtimeSinceStartup < pauseEndTime)
+        {
+            yield return 0;
+        }
+        Time.timeScale = 1f;
+        PauseEnded();
+    }
+
+    public void PauseEnded()
+    {
+        Restart();
     }
 }
