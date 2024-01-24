@@ -5,8 +5,8 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
     public GameObject obstacle;
-    public float maxX = 5;
-    public float minX = -5;
+    public float maxX = 15;
+    public float minX = -15;
     private float maxY = 0;
     private float minY = 0;
     public float timeDiff = 10f;
@@ -30,8 +30,6 @@ public class SpawnPoint : MonoBehaviour
             Spawn();
             spawnTime = Time.time + timeDiff;
         }
-
-        transform.position = ball.transform.position + offset;
     }
 
     void Spawn()
@@ -39,6 +37,6 @@ public class SpawnPoint : MonoBehaviour
         float x = Random.Range(minX, maxX);
         float y = Random.Range(minY, maxY);
 
-        Instantiate(obstacle, transform.position + new Vector3(x, y, 0), transform.rotation);
+        Instantiate(obstacle, transform.position + new Vector3(x, 7, 0), transform.rotation);
     }
 }

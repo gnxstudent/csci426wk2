@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlatformControl : MonoBehaviour
 {
-    public bool shouldRotate = false;
+    public bool shouldRotate = true;
     private Transform ball;
 
     public float maxDegree = 30f;
@@ -56,6 +56,7 @@ public class PlatformControl : MonoBehaviour
                 e.shouldRotate = false;
                 temp.layer = 7;
             }
+
             this.gameObject.layer = 0;
             shouldRotate = true;
             ball = collision.gameObject.GetComponent<Transform>();

@@ -15,9 +15,9 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(ball.transform.position, transform.position) > 20)
+        if (Vector3.Distance(ball.transform.position, transform.position) > 20 || transform.position.y < -15)
         {
-            Destroy(this);
+            Destroy(gameObject); 
         }
     }
 }
